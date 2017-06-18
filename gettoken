@@ -21,7 +21,7 @@ elif [ $1 = "-r" ]; then
 	read client_ID < client_ID
 	read client_secret_ID < client_secret_ID
 
-	curl -s https://account.box.com/api/oauth2/token \ 
+	curl -s https://api.box.com/oauth2/token \ 
 	-d 'grant_type=refresh_token&refresh_token=$refresh_token&client_id=$client_ID&client_secret=$client_secret_ID' \
  	-X POST |iconv -f windows-1251|jq . > token_set
  
